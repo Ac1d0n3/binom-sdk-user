@@ -1,0 +1,1 @@
+export const BINOM_SDK_USER = "@binom/sdk-user";

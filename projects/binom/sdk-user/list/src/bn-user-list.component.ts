@@ -2,16 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-sdk-user',
+  selector: 'lib-bn-user-list',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <p>
-      sdk-user works!
-    </p>
-  `,
-  styles: ``
+  templateUrl: './bn-user-list.component.html',
+  styleUrl: './bn-user-list.component.css'
 })
-export class SdkUserComponent {
+export class BnUserListComponent {
 
 }

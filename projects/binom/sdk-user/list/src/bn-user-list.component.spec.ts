@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SdkUserComponent } from './sdk-user.component';
+import { BnUserListComponent } from './bn-user-list.component';
 
-describe('SdkUserComponent', () => {
-  let component: SdkUserComponent;
-  let fixture: ComponentFixture<SdkUserComponent>;
+describe('BnUserListComponent', () => {
+  let component: BnUserListComponent;
+  let fixture: ComponentFixture<BnUserListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SdkUserComponent]
+      imports: [BnUserListComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SdkUserComponent);
+    fixture = TestBed.createComponent(BnUserListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
