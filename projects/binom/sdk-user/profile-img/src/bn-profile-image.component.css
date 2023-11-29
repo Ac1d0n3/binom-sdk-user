@@ -1,0 +1,7 @@
+.profile-image{ 
+    stroke: var(--color-accent);
+}
+
+.profile-default-image *{
+  fill: var(--color-primary)
+}

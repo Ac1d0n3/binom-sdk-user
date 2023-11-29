@@ -1,13 +1,26 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, Validator, Validators, AbstractControl, ValidationErrors, ValidatorFn, FormGroup, FormControl } from "@angular/forms";
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { BnPasswordValidationMsg } from './validationMsg.json';
 import { BnErrorStateMatcher } from './errorstate-matcher.validator';
+import { CommonModule } from '@angular/common';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { BnSuffixInfoComponent } from '@binom/sdk-core/info';
+import { BnFormErrorComponent } from '@binom/sdk-core/form-error'
 
 @Component({
   selector: 'bn-password-input',
-  templateUrl: './bn-password-input.component.html'
+  templateUrl: './bn-password-input.component.html',
+  imports:[CommonModule,TranslateModule, MatInputModule,BnSuffixInfoComponent,
+    MatButtonModule, MatProgressBarModule,FormsModule, ReactiveFormsModule, BnFormErrorComponent  ],
+  standalone:true
 })
 export class BnPasswordInputComponent implements OnInit, ControlValueAccessor, Validator {
 

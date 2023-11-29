@@ -3,6 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "@binom/sdk-user/*": [
+        "./dist/binom/sdk-user/*"
+      ],
       "@binom/sdk-user": [
         "./dist/binom/sdk-user"
       ]

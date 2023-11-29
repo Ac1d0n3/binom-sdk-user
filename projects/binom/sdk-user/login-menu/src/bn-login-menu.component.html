@@ -1,1 +1,31 @@
-<p>bn-login-menu works!</p>
+
+<ng-container *ngIf="!small">
+    <button aria-label="login menu" class="autoWidth bnLoginMenue" mat-button matTooltip="{{ 'tooltips.usermenue' | translate }}" [matTooltipDisabled]="!tooltip"
+    [matMenuTriggerFor]="loginmenu" style="width:105px" >
+      <i class="fas {{isAuthenticated ? 'fa-user-ninja': 'fa-user-secret'}} faIcon fa-but-fix"></i> {{ (!isAuthenticated ? 'signIn':user.loginname) | translate}}</button>
+  </ng-container>
+  
+  <ng-container *ngIf="small">
+    <button aria-label="login menu" class=" bn-button-fa" mat-icon-button matTooltip="{{ 'tooltips.usermenue' | translate }}" [matTooltipDisabled]="!tooltip"
+    [matMenuTriggerFor]="loginmenu" >
+      <i class="fas {{isAuthenticated ? 'fa-user-ninja': 'fa-user-secret'}} faIcon fa-but-fix"></i> </button>
+  </ng-container>
+  
+  
+  <mat-menu #loginmenu="matMenu" >
+  
+      <button aria-label="signin"  mat-menu-item *bnShowAuthed="false" (click)="signIn()">
+        <i class="fas fa-sign-in-alt fa-fw faIcon"></i> {{'signIn' | translate}}
+      </button>
+      <button aria-label="signup" mat-menu-item *bnShowAuthed="false" (click)="signUp()">
+        <i class="fas fa-user-ninja fa-fw faIcon"></i> {{'signUp' | translate}}
+      </button>
+      <button aria-label="profile" mat-menu-item *bnShowAuthed="true" (click)="profile()"><i class="fas fa-user-ninja faIcon"></i> {{'profile' | translate }}
+      </button>
+      <button aria-label="signout" mat-menu-item *bnShowAuthed="true" (click)="signOut()">
+        <i class="fas fa-sign-out-alt fa-fw faIcon"></i> {{'signOut' | translate }}
+      </button>
+  
+  
+  </mat-menu>
+  
