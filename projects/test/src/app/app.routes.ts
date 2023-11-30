@@ -34,12 +34,6 @@ export const routes: Routes = [
     },
 
     {
-        path: 'components/profile-card',
-        canActivate: [bnNoAuthGuard('/home')],
-        loadComponent:  () => import('./profile-card/profile-card.component').then(m => m.ProfileCardComponent)
-    },
-
-    {
         path: 'components/login-menu',
         canActivate: [bnNoAuthGuard('/home')],
         loadComponent:  () => import('./login/login.component').then(m => m.LoginComponent)

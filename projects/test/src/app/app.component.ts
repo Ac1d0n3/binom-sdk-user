@@ -41,7 +41,7 @@ export class AppComponent {
     },
     {
       title: 'components',
-      data: ['password','login-menu', 'profile-image', 'profile-card']
+      data: ['password','login-menu', 'profile-image']
     },
   ]
   

@@ -63,6 +63,7 @@ export class BnPasswordInputComponent implements OnInit, ControlValueAccessor, V
         name:'special', end: 'bnPassword.errors.password.special', start: 'bnPassword.contains',
         prefixIconClass: 'warn-color fa-fw fas fa-times', middle: this.special
       });
+    
       this.valList.push({
         regEx: new RegExp('(?=(.*['+this.allowedSpecial+']){'+ this.special+'})', "gm"),
         name: 'special'
@@ -73,6 +74,7 @@ export class BnPasswordInputComponent implements OnInit, ControlValueAccessor, V
         name:'upper', end: 'bnPassword.errors.password.upper', start: 'bnPassword.contains',
         prefixIconClass: 'warn-color fa-fw fas fa-times', middle: this.upper
       });
+      
       this.valList.push({
         regEx: new RegExp('(?=(.*[A-Z]){'+ this.upper+'})', "gm"),
         name: 'upper'
@@ -83,6 +85,7 @@ export class BnPasswordInputComponent implements OnInit, ControlValueAccessor, V
         name:'lower', end: 'bnPassword.errors.password.lower', start: 'bnPassword.contains',
         prefixIconClass: 'warn-color fa-fw fas fa-times', middle: this.lower
       });
+     
       this.valList.push({
         regEx: new RegExp('(?=(.*[a-z]){'+ this.lower+'})', "gm"),
         name: 'lower'
@@ -93,6 +96,7 @@ export class BnPasswordInputComponent implements OnInit, ControlValueAccessor, V
         name:'digits', end: 'bnPassword.errors.password.digit', start: 'bnPassword.contains',
         prefixIconClass: 'warn-color fa-fw fas fa-times', middle: this.digits
       });
+     
       this.valList.push({
         regEx: new RegExp('(?=(.*[0-9]){'+ this.digits+'})', "gm"),
         name: 'digits'
