@@ -4,7 +4,7 @@ import { Router, ActivatedRoute} from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { BnUserStateService,BnUserObject, } from '@binom/sdk-user/core';
+import { BnUserStateService,BnUserObject, BnAuthDirective, } from '@binom/sdk-user/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
@@ -13,7 +13,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'bn-login-menu',
   standalone: true,
-  imports: [CommonModule,TranslateModule,MatButtonModule,MatMenuModule,MatTooltipModule],
+  imports: [CommonModule,TranslateModule,MatButtonModule,MatMenuModule,MatTooltipModule, BnAuthDirective],
   templateUrl: './bn-login-menu.component.html',
   styleUrl: './bn-login-menu.component.css'
 })

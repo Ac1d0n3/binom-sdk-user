@@ -20,7 +20,8 @@ import { BnFormErrorComponent } from '@binom/sdk-core/form-error'
   templateUrl: './bn-password-input.component.html',
   imports:[CommonModule,TranslateModule, MatInputModule,BnSuffixInfoComponent,
     MatButtonModule, MatProgressBarModule,FormsModule, ReactiveFormsModule, BnFormErrorComponent  ],
-  standalone:true
+  standalone:true,
+  styleUrl: './bn-password-input.component.css'
 })
 export class BnPasswordInputComponent implements OnInit, ControlValueAccessor, Validator {
 

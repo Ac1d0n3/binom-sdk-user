@@ -1,7 +1,94 @@
 .profile-image{ 
-    stroke: var(--color-accent);
+    stroke: var(--mdc-fab-container-color);
 }
 
 .profile-default-image *{
-  fill: var(--color-primary)
+  fill: var(--mdc-fab-container-color)
 }
+
+.profile-action-buttons{
+    position: absolute;
+    margin: 0px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+
+.profile-image-has{
+
+    position: absolute;
+  }
+  
+  .profile-image-wrapper{
+
+    position: relative;
+    border: 1px solid transparent;
+    padding-bottom:20px;
+  }
+  
+  .profile-img-update{
+    position: absolute;
+    left: 0px;
+    top:0px;
+  }
+  
+  .profile-img-edit{
+    position: absolute;
+    right:0px;
+    top:0px;
+  }
+  
+  .profile-img-delete{
+    position: absolute;
+    bottom: 0px;
+    left: 0px
+  }
+  
+  .profile-img-outline{
+    border: 1px dashed ;
+  }
+  
+    
+  .profile-image-has{
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .profile-action-visible{
+    opacity: 1;
+  }
+  
+  
+  .profile-image-has-inner{
+    position: relative;
+  
+  }
+
+  .profile-image-help,.profile-image-saved{
+    box-sizing: border-box;
+    text-align: center;
+    position: absolute;
+    width: 145px;
+    height: 145px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  
+  .profile-image-help{
+    line-height: 12px;
+    padding-top: 20px;
+    font-size: 10px;
+    white-space: pre;
+  }
+  
+   .profile-image-saved{
+    padding-top: 40px;
+    font-size: 16px;
+  }
+  
+  
+
+  

@@ -1,13 +1,14 @@
 
-<div class="profile-image-wrapper " [ngClass]="curMode === 'edit-help' || curMode === 'edit'? 'profile-img-outline accent-border':null"
+<div class="profile-image-wrapper " [style.width.px]="this.height" [style.height.px]="this.height" [ngClass]="curMode === 'edit-help' || curMode === 'edit'? 'profile-img-outline accent-border':null"
     (mouseenter)="onHoverStart()" (mouseleave)="onHoverEnd()">
 
-    <div *ngIf="curMode === 'none' && (imageUrl === '' || imageUrl === null) "  [ngClass]=" hovered && curMode === 'none'?   'fade-in-item' : 'fade-out-item' "  class="profile-action-buttons">
+    <div *ngIf="curMode === 'none' && (imageUrl === '' || imageUrl === null) "  [ngClass]=" hovered && curMode === 'none'?   'fade-in-item' : 'fade-out-item' "  
+    class="profile-action-buttons">
         <button type="button" mat-mini-fab  (click)="selectImage()"  class="bn-button-fa"><i class="fas fa-plus-circle"></i></button>
     </div> 
 
-    <div class="profile-image-has" *ngIf="curMode === 'none' && (imageUrl !== '' || imageUrl !== null) "  [ngClass]=" hovered ?  'profile-action-visible'  :  null" >
-        <div class="profile-image-has-inner">
+    <div class="profile-image-has" [style.width.px]="this.height" [style.height.px]="this.height" *ngIf="curMode === 'none' && (imageUrl !== '' && imageUrl !== null) "  [ngClass]=" hovered ?  'profile-action-visible'  :  null" >
+        <div class="profile-image-has-inner" [style.width.px]="this.height" [style.height.px]="this.height">
             <div class="profile-img-update"><button class="bn-button-fa" type="button" mat-mini-fab (click)="selectImage()" ><i class="fas fa-sync-alt"></i></button></div>
             <div class="profile-img-edit"><button class=" bn-button-fa" type="button" mat-mini-fab (click)="fireAction('edit-help')"><i class="fas fa-arrows-alt"></i></button></div>
             <div class="profile-img-delete"><button class=" bn-button-fa" type="button" mat-mini-fab (click)="fireAction('delete')"><i class="fas fa-trash"></i></button></div>
@@ -17,11 +18,12 @@
     <input style="display:none" type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
     
 
-    <div class="profile-image-help accent-bg " *ngIf="curMode === 'edit-help' " > {{'user.profileImgHelp' | translate }}
+    <div [style.width.px]="this.height" [style.height.px]="this.height" class="profile-image-help accent-bg " *ngIf="curMode === 'edit-help' " > 
+        {{'user.profileImgHelp' | translate }} <br>
         <button color="primary" mat-flat-button (click)="fireAction('edit')"> OK </button>
     </div>
 
-    <div class="profile-image-saved accent-bg " *ngIf="curMode === 'saved' " > {{'user.profileImgSaved' | translate }} </div>
+    <div [style.width.px]="this.height" [style.height.px]="this.height" class="profile-image-saved accent-bg " *ngIf="curMode === 'saved' " > {{'user.profileImgSaved' | translate }} </div>
 
     <svg [attr.id]="'profile-img'+id"  [attr.height]="height>0?height:null" [attr.width]="width>0?width:null"
         viewBox="0 0 120 120"  version="1.1" xmlns="http://www.w3.org/2000/svg"  xmlns:svg="http://www.w3.org/2000/svg">
@@ -32,7 +34,7 @@
 
         <g [attr.clip-path]="'url(#circle-clip'+id+')'">
             
-            <image #userImage
+            <image #userImage 
             (mousedown)="onDragStart($event)" (mousemove)="onDrag($event)" (mouseup)="onDragEnd()"
         
             [attr.href]="imageUrl" [attr.width]="imageWidth" [attr.height]="imageHeight" [attr.transform]="transform"></image>

@@ -6,6 +6,7 @@ import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BnUserStateService } from '@binom/sdk-user/core';
 
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
@@ -22,7 +23,7 @@ export const appConfig: ApplicationConfig = {
             deps: [HttpClient],
         },
         
-    })), provideAnimations()]
+    }), BnUserStateService), provideAnimations()]
 };
 
 

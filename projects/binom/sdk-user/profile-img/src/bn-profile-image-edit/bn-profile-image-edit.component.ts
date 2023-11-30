@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { BnApiService } from '@binom/sdk-core/data-loader';
 import { map, take } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,7 +13,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule,MatButtonModule,TranslateModule],
   templateUrl: './bn-profile-image-edit.component.html',
-  styleUrls: ['./bn-profile-image-edit.component.css', '../bn-profile-image.component.css']
+  styleUrls: ['./bn-profile-image-edit.component.css', '../bn-profile-image.component.css'],
+ // encapsulation:ViewEncapsulation.None
 })
 export class BnProfileImageEditComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('fileInput', { static: false }) fileInput!: ElementRef;
@@ -24,12 +25,12 @@ export class BnProfileImageEditComponent implements OnInit, AfterViewInit, OnDes
   @Input() height:number = 120;
   @Input() width:number = 0;
   @Input() imageUrl: string = ''; 
-  @Input() apiPath: string = 'user/user-image';
+  @Input() apiPath: string = '';
   @Input() transform: string = ''; 
   @Input() id: string = ''; 
 
-  imageWidth: number = 300;
-  imageHeight: number = 300;
+  imageWidth: number = this.height;
+  imageHeight: number =   this.height;
   baseUrl = ''; 
   isDragging: boolean = false;
   startX: number = 0;
@@ -44,7 +45,7 @@ export class BnProfileImageEditComponent implements OnInit, AfterViewInit, OnDes
   isHovered: boolean = false;
   
   ngOnInit(): void {
-    if(this.imageUrl !== null && this.imageUrl !== '')  this.imageUrl =  this.baseUrl.replace('/api/','') + this.imageUrl 
+    if(this.imageUrl !== null && this.imageUrl !== '' && this.apiPath !== '')  this.imageUrl =  this.baseUrl.replace('/api/','') + this.imageUrl 
   }
 
   ngAfterViewInit(): void {

@@ -17,7 +17,7 @@ export class BnProfileImageComponent {
   @Input() width:number = 0;
   @Input() imageUrl: string = ''; 
   @Input() transform: string = ''; 
-  @Input() apiPath: string = 'user/user-image'; 
+  @Input() apiPath: string = ''; 
 
   @Input() editMode:boolean = false;
 }

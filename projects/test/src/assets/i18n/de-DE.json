@@ -1,4 +1,6 @@
 {   
+   "signIn":"Einloggen",
+   
     "charslong": "Zeichen lang sein",
     "bnPassword":{
         "contains": "muss",

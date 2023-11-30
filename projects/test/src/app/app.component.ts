@@ -7,11 +7,12 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { BnLoginMenuComponent } from '@binom/sdk-user/login-menu';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterModule, MatToolbarModule,
+  imports: [CommonModule, RouterOutlet, RouterModule, MatToolbarModule,BnLoginMenuComponent,
     BnTranslateSwitchMenuComponent, TranslateModule, MatSidenavModule, MatButtonModule, MatExpansionModule],
   templateUrl: './app.component.html',
 
@@ -40,11 +41,8 @@ export class AppComponent {
     },
     {
       title: 'components',
-      data: ['password','login-menue', 'profile-img', 'profile-card']
+      data: ['password','login-menu', 'profile-image', 'profile-card']
     },
   ]
-
- 
-  
   
 }
