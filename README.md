@@ -1,6 +1,6 @@
 # @binom/sdk-user
 ---------------------------------------------------------------------------------
-** CORE V1.0.0
+** CORE V1.0.1
 Author: Thomas Lindackers 
 
 BINOM.net
