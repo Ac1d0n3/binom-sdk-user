@@ -3,5 +3,10 @@
   "dest": "../../../dist/binom/sdk-user",
   "lib": {
     "entryFile": "public-api.ts"
-  }
+  },
+  "assets": [
+    "./styles/*.*",
+    "./assets/**/*.*",
+    "./schematics/**/*.*"
+   ]
 }
